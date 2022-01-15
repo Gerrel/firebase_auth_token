@@ -1,11 +1,9 @@
 import 'package:firebase_auth_token/src/sip.dart';
 import 'package:firebase_auth_token/src/string_email_extension.dart';
-import 'package:meta/meta.dart';
 
 export 'package:firebase_auth_token/src/sip.dart';
 
 /// Firebase Auth user
-@immutable
 class AuthUser {
   /// Unique user id
   final String id;
