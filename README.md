@@ -19,7 +19,7 @@ final user = FirebaseAuthToken.getUserFromToken('{token}');
 This project is licensed under the MIT License - see the 
 [license] file for details.
 
-[license]: https://github.com/Gerrel/firebase_auth_token/blob/master/LICENSE.md
+[license]: https://github.com/Gerrel/firebase_auth_token/blob/main/LICENSE.md
 [github-watch-badge]: https://img.shields.io/github/watchers/Gerrel/firebase_auth_token.svg?style=social
 [github-watch]: https://github.com/Gerrel/firebase_auth_token/watchers
 [github-star-badge]: https://img.shields.io/github/stars/Gerrel/firebase_auth_token.svg?style=social
