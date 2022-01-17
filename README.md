@@ -11,7 +11,7 @@ Extract user from verified Firebase Auth id token.
 There is just one class `FirebaseAuthToken` with just one method `getUserFromToken({authentication-token})` which will return a `AuthUser` object if the token is valid or else it will throw an exception.
 
 ```dart
-final user = FirebaseAuthToken.getUserFromToken('{token}');
+final user = await FirebaseAuthToken.getUserFromToken('{token}');
 ```
 
 ## License
