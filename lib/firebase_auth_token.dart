@@ -36,7 +36,7 @@ class FirebaseAuthToken {
 
     // Verify the ID token's payload conforms to the following constraints:
     final data = jws.unverifiedPayload.jsonContent as Map<String, dynamic>;
-    final now = DateTime.now().millisecondsSinceEpoch / 1000;
+    final now = DateTime.now().toUtc().millisecondsSinceEpoch / 1000;
 
     // exp	Expiration time	Must be in the future. The time is measured in seconds since the UNIX epoch.
     final exp = data['exp'] as int?;
