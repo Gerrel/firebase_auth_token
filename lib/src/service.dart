@@ -33,16 +33,16 @@ class Service {
       }
 
       final cert = await _repository.getPublicKeys();
-      _startUpdateTimer(cert);
+      _startUpdateTimer(cert.maxAge);
       _cachedPublicKey = cert;
       return cert;
     });
     return result;
   }
 
-  void _startUpdateTimer(Certificate cert) {
+  void _startUpdateTimer(int seconds) {
     _updateTimer?.cancel();
-    _updateTimer = Timer(Duration(seconds: max(cert.maxAge, 1)), () {
+    _updateTimer = Timer(Duration(seconds: max(seconds, 1)), () {
       _cachedPublicKey = null;
       getPublicKeys();
     });
@@ -51,5 +51,6 @@ class Service {
   /// Dispose resources in the class
   void dispose() {
     _updateTimer?.cancel();
+    _updateTimer = null;
   }
 }

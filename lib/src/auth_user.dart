@@ -50,7 +50,7 @@ class AuthUser {
   @override
   String toString() {
     return '''
-    User {
+    AuthUser {
       id: $id,
       name: $name,
       picture: $picture,
