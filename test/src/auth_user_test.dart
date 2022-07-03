@@ -63,6 +63,6 @@ void main() {
   });
 
   test('should get proper toString value', () {
-    expect('${user1()}'.trim(), startsWith('User {'));
+    expect('${user1()}'.trim(), startsWith('AuthUser {'));
   });
 }

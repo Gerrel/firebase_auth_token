@@ -5,6 +5,8 @@ export 'package:firebase_auth_token/src/sip.dart';
 
 /// Firebase Auth user
 class AuthUser {
+  final Map<String, dynamic> _data;
+
   /// Unique user id
   final String id;
 
@@ -30,8 +32,12 @@ class AuthUser {
   /// Time of token generation
   final int iat;
 
+  /// Extract custom claim from the token
+  dynamic getCustomClaim(String name) => _data[name];
+
   /// User auth obj constructor
-  const AuthUser({
+  const AuthUser(
+    this._data, {
     required this.id,
     required this.name,
     required this.picture,
@@ -65,6 +71,7 @@ class AuthUser {
   /// create user from data map
   factory AuthUser.fromMap(Map<String, dynamic> data) {
     return AuthUser(
+      data,
       id: data['sub']! as String,
       name: data['name'] as String? ??
           (data['email']! as String).withoutEmailProvider(),
