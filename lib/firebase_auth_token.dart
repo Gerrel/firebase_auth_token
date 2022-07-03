@@ -19,6 +19,16 @@ class FirebaseAuthToken {
 
   /// Verify and extract the user object within the id token
   Future<AuthUser> getUserFromToken(String token) async {
+    final data = await _verifyToken(token);
+    return AuthUser.fromMap(data);
+  }
+
+  /// Verify and return the raw data from the token
+  Future<Map<String, dynamic>> getRawDataFromToken(String token) {
+    return _verifyToken(token);
+  }
+
+  Future<Map<String, dynamic>> _verifyToken(String token) async {
     final publicKeys = await _service.getPublicKeys();
     final jws = JsonWebSignature.fromCompactSerialization(token);
 
@@ -83,6 +93,6 @@ class FirebaseAuthToken {
       throw Exception('Token signature verification failed');
     }
 
-    return AuthUser.fromMap(data);
+    return data;
   }
 }
