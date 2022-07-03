@@ -35,6 +35,11 @@ class AuthUser {
   /// Extract custom claim from the token
   dynamic getCustomClaim(String name) => _data[name];
 
+  /// Create your own custom claims object from the raw data in the token
+  T getCustomClaims<T>(T Function(Map<String, dynamic> data) creator) {
+    return creator(_data);
+  }
+
   /// User auth obj constructor
   const AuthUser(
     this._data, {

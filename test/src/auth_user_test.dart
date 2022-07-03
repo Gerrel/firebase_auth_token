@@ -2,6 +2,11 @@ import 'package:firebase_auth_token/src/auth_user.dart';
 import 'package:jose/jose.dart';
 import 'package:test/test.dart';
 
+class CustomClaims {
+  final String aud;
+  CustomClaims(Map<String, dynamic> data) : aud = data['aud'] as String;
+}
+
 void main() {
   AuthUser user1() {
     const token =
@@ -64,5 +69,13 @@ void main() {
 
   test('should get proper toString value', () {
     expect('${user1()}'.trim(), startsWith('AuthUser {'));
+  });
+
+  test('should be able to extract custom claims', () {
+    final user = user1();
+    expect(user.getCustomClaim('aud'), equals('devcda-test'));
+
+    final obj = user.getCustomClaims((data) => CustomClaims(data));
+    expect(obj.aud, equals('devcda-test'));
   });
 }
