@@ -1,5 +1,5 @@
 ## [1.0.2] - 03 jul. 2022.
-add ```getRawDataFromToken``` to verified and return raw json data
+add ```getRawDataFromToken``` to verify and return raw json data
 
 ## [1.0.1] - 26 mar. 2022.
 * using time check with utc time explicitly.
