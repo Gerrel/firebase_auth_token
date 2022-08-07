@@ -1,3 +1,7 @@
+## [1.0.4] - 07 aug. 2022.
+* updated description
+* added example
+
 ## [1.0.3] - 03 jul. 2022.
 * added method ```getCustomClaims``` to user object.
 * added method ```getDataFromToken``` to firebase auth token.

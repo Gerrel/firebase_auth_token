@@ -1,0 +1,13 @@
+name: firebase_auth_token_example
+description: firebase_auth_token example.
+version: 0.0.1
+homepage: https://github.com/Gerrel/firebase_auth_token
+publish_to: none
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  firebase_auth_token:
+    path: ../
+
+
