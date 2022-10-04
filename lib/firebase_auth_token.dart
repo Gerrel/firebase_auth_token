@@ -14,8 +14,15 @@ class FirebaseAuthToken {
   /// which can be found in the URL of that project's console.
   final String projectId;
 
+  /// It can be that the clock on your server has time discrepancy
+  /// So you can define here what the max value can be (default: 60)
+  final int timeDiscrepancyInSeconds;
+
   /// Create instance for firebase id token check by projectId
-  FirebaseAuthToken({required this.projectId});
+  FirebaseAuthToken({
+    required this.projectId,
+    this.timeDiscrepancyInSeconds = 60,
+  });
 
   /// Verify and extract the data within the id token
   Future<Map<String, dynamic>> getDataFromToken(String token) async {
@@ -45,7 +52,7 @@ class FirebaseAuthToken {
     }
     // iat	Issued-at time	Must be in the past. The time is measured in seconds since the UNIX epoch.
     final iat = data['iat'] as int?;
-    if (iat == null || iat > now) {
+    if (iat == null || iat > now + timeDiscrepancyInSeconds) {
       throw Exception('Token is not issued in the past');
     }
 
@@ -69,7 +76,7 @@ class FirebaseAuthToken {
 
     // auth_time	Authentication time	Must be in the past. The time when the user authenticated.
     final authTime = data['auth_time'] as int?;
-    if (authTime == null || authTime > now) {
+    if (authTime == null || authTime > now + timeDiscrepancyInSeconds) {
       throw Exception('Token is not authorized in the past');
     }
 

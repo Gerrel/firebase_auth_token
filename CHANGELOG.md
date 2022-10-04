@@ -1,3 +1,6 @@
+## [1.0.5] - 04 oct. 2022.
+* added time discrepancy property for possible time sync issues
+
 ## [1.0.4] - 07 aug. 2022.
 * updated description
 * added example
