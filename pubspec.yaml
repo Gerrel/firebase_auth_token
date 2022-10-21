@@ -1,5 +1,5 @@
 name: firebase_auth_token
-description: Extract user from verified Firebase Auth id token. The Firebase public key is cached and updated autimatically.
+description: Extract user from verified Firebase Auth id token. The Firebase public key is cached and updated automatically.
 homepage: https://github.com/Gerrel/firebase_auth_token
 version: 1.0.5
 
