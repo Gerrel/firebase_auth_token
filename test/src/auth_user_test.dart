@@ -75,7 +75,7 @@ void main() {
     final user = user1();
     expect(user.getCustomClaim('aud'), equals('devcda-test'));
 
-    final obj = user.getCustomClaims((data) => CustomClaims(data));
+    final obj = user.getCustomClaims(CustomClaims.new);
     expect(obj.aud, equals('devcda-test'));
   });
 }
