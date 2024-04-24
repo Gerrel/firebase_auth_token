@@ -41,7 +41,7 @@ class Sip {
     google,
     password,
     phone,
-    twitter
+    twitter,
   ];
 
   /// Get sign in provider from provider id

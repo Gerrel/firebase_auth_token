@@ -1,3 +1,6 @@
+## [1.0.6] - 24 apr. 2024.
+* update dependencies
+
 ## [1.0.5] - 04 oct. 2022.
 * added time discrepancy property for possible time sync issues
 
