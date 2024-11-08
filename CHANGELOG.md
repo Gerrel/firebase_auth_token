@@ -1,3 +1,6 @@
+## [1.0.7] - 8 nov. 2024.
+* update dependencies
+
 ## [1.0.6] - 24 apr. 2024.
 * update dependencies
 
