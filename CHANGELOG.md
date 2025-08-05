@@ -1,3 +1,6 @@
+## [1.0.9] - 05 aug. 2025.
+* update dependencies
+
 ## [1.0.8] - 18 feb. 2025.
 * removed deprecated analysis option
 
